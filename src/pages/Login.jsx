@@ -15,7 +15,7 @@ const Login = () => {
       // Store the token so the "api.js" interceptor can find it
       localStorage.setItem('token', response.data.token);
       navigate('/dashboard'); // We will create this page next
-    } catch (err) {
+    } catch {
       setError('Invalid email or password');
     }
   };

@@ -1,5 +1,7 @@
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import ProtectedRoute from './components/ProtectedRoute';
 
 function App() {
   return (
@@ -12,7 +14,10 @@ function App() {
         <Route path="/" element={<Navigate to="/login" />} />
         
         {/* Placeholder for Dashboard */}
-        <Route path="/dashboard" element={<div className="p-10 text-2xl">Dashboard (Coming Soon)</div>} />
+        <Route path="/dashboard" element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>} />
       </Routes>
     </Router>
   );

@@ -1,6 +1,7 @@
 import axios from 'axios';
 
 const API_URL = "https://task-manager-api-7po6.onrender.com";
+const CLIENT_URL = "https://task-manager-client-ivory-kappa.vercel.app/";
 
 const api = axios.create({
   baseURL: API_URL,

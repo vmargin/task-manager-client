@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import api from '../services/api';
+import { useNavigate } from 'react-router-dom';
 
 const Dashboard = () => {
   const [tasks, setTasks] = useState([]);
@@ -52,8 +53,12 @@ const Dashboard = () => {
 // 4. Logout Logic
 const handleLogout = () => {
   localStorage.removeItem('token');
-  window.location.href = '/login';
+  navigate('/login'); // Use this instead of window.location.href
 };
+
+// 5. Navigation Hook
+const navigate = useNavigate();
+
 
   return (
     <div className="min-h-screen bg-slate-50 p-6">
